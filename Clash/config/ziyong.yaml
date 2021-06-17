@@ -28,10 +28,9 @@ proxy-groups:
       - ♻️ 自动选择
       - 🔯 故障转移
       - 🔮 负载均衡
-      - 🚀 手动切换
       - DIRECT
 
-  - name: 🚀 手动切换
+  - name: 👉 手动切换
     type: select
     proxies:
 
@@ -61,17 +60,25 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
-      - 🚀 手动切换
+      - 👉 手动切换
       - 🔯 故障转移
-
+      - ✈️ 其他节点
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇲 美加节点
   - name: 📹 油管视频
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
-      - 🚀 手动切换
+      - 👉 手动切换
       - 🔯 故障转移
-
+      - ✈️ 其他节点
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇲 美加节点
   - name: 🎥 奈飞视频
     type: select
     proxies:
@@ -79,8 +86,6 @@ proxy-groups:
       - 🚀 节点选择
       - ♻️ 自动选择
       - DIRECT
-
-
   - name: 📺 哔哩哔哩
     type: select
     proxies:
@@ -92,50 +97,52 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 👉 手动切换
+      - 🔯 故障转移
+      - ✈️ 其他节点
       - 🇭🇰 香港节点
       - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🚀 手动切换
+      - 🇺🇲 美加节点
       - DIRECT
-      - 🔯 故障转移
   - name: 📢 谷歌FCM
     type: select
     proxies:
-      - DIRECT
       - 🚀 节点选择
-      - 🇺🇲 美国节点
       - ♻️ 自动选择
+      - 👉 手动切换
       - 🔯 故障转移
-
-
+      - ✈️ 其他节点
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美加节点
+      - 🇰🇷 韩国节点
+      - DIRECT
   - name: Ⓜ️ 微软云盘
     type: select
     proxies:
       - DIRECT
       - 🚀 节点选择
-      - 🚀 手动切换
-
-
+      - 👉 手动切换
+      - 🇺🇲 美加节点
+      - ✈️ 其他节点
   - name: 🎮 游戏平台
     type: select
     proxies:
       - DIRECT
       - 🚀 节点选择
-      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🚀 手动切换
-
-
+      - 🇺🇲 美加节点
+      - ✈️ 其他节点
+      - 👉 手动切换
   - name: 🎯 全球直连
     type: select
     proxies:
       - DIRECT
       - 🚀 节点选择
       - ♻️ 自动选择
-
-
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -155,8 +162,9 @@ proxy-groups:
     type: select
     proxies:
       - ♻️ 自动选择
-      - DIRECT
       - 🔯 故障转移
+      - DIRECT
+
   - name: 🇭🇰 香港节点
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -181,11 +189,18 @@ proxy-groups:
     proxies:
 
 
-  - name: 🇺🇲 美国节点
+  - name: 🇺🇲 美加节点
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 150
+    proxies:
+    
+  - name: 🇨🇳 台湾节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
     proxies:
 
 
@@ -194,6 +209,12 @@ proxy-groups:
     proxies:
       - DIRECT
 
+  - name: ✈️ 其他节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
 
 rules:
  - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
